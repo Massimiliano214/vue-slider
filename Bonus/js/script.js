@@ -51,6 +51,9 @@ const { createApp } = Vue
         },
         loopAuto() {
             setInterval(this.nextSlide, 2000);
+        },
+        loopKiller(loop) {
+            clearInterval(loop);
         }
     },
     mounted() {
