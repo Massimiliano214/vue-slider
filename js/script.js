@@ -34,6 +34,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+            activeItem: 0,
             slides: [
                 {
                         image: 'img/01.webp',
@@ -62,5 +63,22 @@ const { createApp } = Vue
                     }
                 ],
       }
+    },
+    methods: {
+        nextSlide() {
+            this.activeItem++;
+            if (this.activeItem == slides.length) {
+                this.activeItem = 0;
+            }
+        },
+        prevSlide() {
+            this.activeItem--;
+            if (this.activeItem < 0) {
+                this.activeItem = slides.length - 1;
+            }
+        },
+        activeThumb(clickActive) {
+            this.activeItem = clickActive;
+        },
     }
   }).mount('#app')
