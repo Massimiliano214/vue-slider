@@ -3,6 +3,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+            clock: "",
             activeItem: 0,
             slides: [
                 {
@@ -50,10 +51,11 @@ const { createApp } = Vue
             this.activeItem = clickActive;
         },
         loopAuto() {
-            setInterval(this.nextSlide, 2000);
+            clock = setInterval(this.nextSlide, 1000);
+            return clock
         },
-        loopKiller(loop) {
-            clearInterval(loop);
+        loopKiller() {
+            clearInterval(clock);
         }
     },
     mounted() {
