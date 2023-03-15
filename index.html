@@ -29,14 +29,15 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevSlide"></div>
                     <div class="next" @click="nextSlide"></div>
-                    <div class="thumb" :class="slides[activeItem].active"> 
+                    <div v-for="(item, index) in slides" class="thumb" :class="(activeItem == index)?'active':''"> 
+                        <img :src="item.image" :alt="item.title" @click="activeThumb(index)" />
+                    </div>
+                    
+                    <!--
+                    <div v-for="(item, index) in slides" class="thumb">
                         <img v-for="(item, index) in slides" :src="item.image" :alt="item.title"  @click="activeThumb(index)" />
                     </div>
-                    <!--
-                        
-                    <div class="thumb">
-                        <img :src="img/02.webp" alt="Ratchet & Clank" />
-                    </div>
+                    
                     <div class="thumb">
                         <img src="img/03.webp" alt="Fortnite" />
                     </div>
