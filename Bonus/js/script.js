@@ -49,5 +49,11 @@ const { createApp } = Vue
         activeThumb(clickActive) {
             this.activeItem = clickActive;
         },
+        loopAuto() {
+            setInterval(this.nextSlide, 2000);
+        }
+    },
+    mounted() {
+        this.loopAuto();
     }
   }).mount('#app')
