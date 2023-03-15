@@ -51,7 +51,7 @@ const { createApp } = Vue
             this.activeItem = clickActive;
         },
         loopAuto() {
-            clock = setInterval(this.nextSlide, 1000);
+            clock = setInterval(this.nextSlide, 3000);
             return clock
         },
         loopKiller() {
