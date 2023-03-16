@@ -55,6 +55,7 @@ const { createApp } = Vue
         },
         loopKiller() {
             clearInterval(this.clock);
+            this.clock = null;
         }
     },
     mounted() {
